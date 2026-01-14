@@ -70,6 +70,7 @@ No modules.
 | Name | Type |
 |------|------|
 | [proxmox_virtual_environment_download_file.talos](https://registry.terraform.io/providers/bpg/proxmox/0.93.0/docs/resources/virtual_environment_download_file) | resource |
+| [proxmox_virtual_environment_file.userdata](https://registry.terraform.io/providers/bpg/proxmox/0.93.0/docs/resources/virtual_environment_file) | resource |
 | [proxmox_virtual_environment_vm.template](https://registry.terraform.io/providers/bpg/proxmox/0.93.0/docs/resources/virtual_environment_vm) | resource |
 
 ## Inputs
@@ -90,6 +91,7 @@ No modules.
 | <a name="input_template_network_dns"></a> [template\_network\_dns](#input\_template\_network\_dns) | n/a | `list(string)` | `[]` | no |
 | <a name="input_template_pool"></a> [template\_pool](#input\_template\_pool) | Name of the Talos template VM pool | `string` | `""` | no |
 | <a name="input_template_tpm"></a> [template\_tpm](#input\_template\_tpm) | Whether to enable TPM for the Talos template VM | `bool` | `false` | no |
+| <a name="input_template_userdata"></a> [template\_userdata](#input\_template\_userdata) | User metadata for cloud-init image | `string` | `""` | no |
 
 ## Outputs
 

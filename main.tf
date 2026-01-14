@@ -10,6 +10,18 @@ resource "proxmox_virtual_environment_download_file" "talos" {
   url                     = "https://factory.talos.dev/image/${var.talos_factory_hash}/${var.talos_version}/nocloud-amd64${var.talos_secureboot ? "-secureboot" : ""}.raw.xz"
 }
 
+resource "proxmox_virtual_environment_file" "userdata" {
+  count        = length(var.template_userdata) > 0 ? 1 : 0
+  node_name    = var.node
+  content_type = "snippets"
+  datastore_id = var.datastore
+
+  source_raw {
+    data      = var.template_userdata
+    file_name = "${var.template_name}.yaml"
+  }
+}
+
 resource "proxmox_virtual_environment_vm" "template" {
   name        = var.template_name
   node_name   = var.node
@@ -95,7 +107,8 @@ resource "proxmox_virtual_environment_vm" "template" {
       }
     }
 
-    datastore_id = var.template_datastore
+    datastore_id      = var.template_datastore
+    user_data_file_id = length(proxmox_virtual_environment_file.userdata) > 0 ? proxmox_virtual_environment_file.userdata[0].id : null
   }
 
   tablet_device = false

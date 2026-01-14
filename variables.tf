@@ -39,6 +39,12 @@ variable "template_datastore" {
   default     = "local"
 }
 
+variable "template_userdata" {
+  description = "User metadata for cloud-init image"
+  type        = string
+  default     = ""
+}
+
 variable "template_network" {
   type = map(any)
   default = {
