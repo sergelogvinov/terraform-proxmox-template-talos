@@ -1,2 +1,3 @@
-# terraform-proxmox-template-talos
-Module creates proxmox template virtual machine
+# Terraform module for Proxmox VE
+
+This Terraform module allows you to create Virtual Machine template of Talos Linux
