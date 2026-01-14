@@ -78,13 +78,19 @@ resource "proxmox_virtual_environment_vm" "template" {
     dynamic "ip_config" {
       for_each = var.template_network
       content {
-        ipv4 {
-          address = lookup(try(ip_config.value, {}), "ip4", null)
-          gateway = lookup(try(ip_config.value, {}), "gw4", null)
+        dynamic "ipv4" {
+          for_each = contains(keys(ip_config.value), "ip4") ? [1] : []
+          content {
+            address = lookup(ip_config.value, "ip4")
+            gateway = lookup(ip_config.value, "gw4", null)
+          }
         }
-        ipv6 {
-          address = lookup(try(ip_config.value, {}), "ip6", null)
-          gateway = lookup(try(ip_config.value, {}), "gw6", null)
+        dynamic "ipv6" {
+          for_each = contains(keys(ip_config.value), "ip6") ? [1] : []
+          content {
+            address = lookup(ip_config.value, "ip6")
+            gateway = lookup(ip_config.value, "gw6", null)
+          }
         }
       }
     }
