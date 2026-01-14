@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.0](https://github.com/sergelogvinov/terraform-proxmox-template-talos/compare/v0.1.0...v0.2.0) (2026-01-14)
+
+
+### Features
+
+* template user-data ([1a4ea51](https://github.com/sergelogvinov/terraform-proxmox-template-talos/commit/1a4ea51ba5f839f5b2219d7c24aed36e789be8e1))
+
 ## [0.1.0](https://github.com/sergelogvinov/terraform-proxmox-template-talos/compare/v0.0.1...v0.1.0) (2026-01-14)
 
 
