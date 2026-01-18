@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.0](https://github.com/sergelogvinov/terraform-proxmox-template-talos/compare/v0.2.0...v0.3.0) (2026-01-18)
+
+
+### Features
+
+* hugepages ([f17a328](https://github.com/sergelogvinov/terraform-proxmox-template-talos/commit/f17a328d714390f7353c17bf0264cace91839150))
+
 ## [0.2.0](https://github.com/sergelogvinov/terraform-proxmox-template-talos/compare/v0.1.0...v0.2.0) (2026-01-14)
 
 
