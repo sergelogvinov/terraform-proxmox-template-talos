@@ -28,6 +28,23 @@ variable "template_tpm" {
   default     = false
 }
 
+variable "template_hugepages" {
+  description = "Whether to enable hugepages for the Talos template VM"
+  type        = string
+  default     = ""
+
+  validation {
+    condition     = contains(["", "2", "1024", "any"], var.template_hugepages)
+    error_message = "The hugepages must be one of '2', '1024', or 'any'."
+  }
+}
+
+variable "template_cpu_flags" {
+  description = "CPU flags for the Talos template VM"
+  type        = list(string)
+  default     = []
+}
+
 variable "template_id" {
   description = "ID of the Talos template VM"
   type        = number

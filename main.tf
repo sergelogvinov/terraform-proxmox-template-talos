@@ -57,6 +57,18 @@ resource "proxmox_virtual_environment_vm" "template" {
     sockets      = 1
     numa         = true
     type         = "host"
+    flags        = sort(flatten([var.template_cpu_flags, var.template_hugepages == "1024" ? ["+pdpe1gb"] : []]))
+  }
+  dynamic "memory" {
+    for_each = var.template_hugepages != "" ? [1] : []
+    content {
+      dedicated = 1024
+      floating  = 0
+      hugepages = var.template_hugepages
+      # Kernel may not allocate memory if hugepages are released, so we keep them allocated
+      # Better to allocate 1G hugepages on boot time, kernel cmdline: default_hugepagesz=1G hugepagesz=1G hugepages=xx
+      keep_hugepages = var.template_hugepages == "1024" ? true : false
+    }
   }
 
   scsi_hardware = "virtio-scsi-single"

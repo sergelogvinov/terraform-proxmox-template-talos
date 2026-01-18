@@ -1,6 +1,9 @@
 # Terraform module for Proxmox VE
 
-This Terraform module allows you to create Virtual Machine template of Talos Linux
+This Terraform module creates a Talos Linux virtual machine template.
+You can use this template to quickly deploy node groups for Kubernetes clusters by cloning it.
+
+For example, [Karpenter for Proxmox](https://github.com/sergelogvinov/karpenter-provider-proxmox) uses prebuilt templates to create Kubernetes nodes on demand.
 
 ## Usage Example
 
@@ -84,7 +87,9 @@ No modules.
 | <a name="input_talos_image_name"></a> [talos\_image\_name](#input\_talos\_image\_name) | Name of the Talos image to download | `string` | `"talos.raw.xz.img"` | no |
 | <a name="input_talos_secureboot"></a> [talos\_secureboot](#input\_talos\_secureboot) | Whether to use the secureboot Talos image | `bool` | `false` | no |
 | <a name="input_talos_version"></a> [talos\_version](#input\_talos\_version) | Version of Talos of template to download | `string` | `"v1.12.1"` | no |
+| <a name="input_template_cpu_flags"></a> [template\_cpu\_flags](#input\_template\_cpu\_flags) | CPU flags for the Talos template VM | `list(string)` | `[]` | no |
 | <a name="input_template_datastore"></a> [template\_datastore](#input\_template\_datastore) | Datastore to store the Talos template | `string` | `"local"` | no |
+| <a name="input_template_hugepages"></a> [template\_hugepages](#input\_template\_hugepages) | Whether to enable hugepages for the Talos template VM | `string` | `""` | no |
 | <a name="input_template_id"></a> [template\_id](#input\_template\_id) | ID of the Talos template VM | `number` | n/a | yes |
 | <a name="input_template_name"></a> [template\_name](#input\_template\_name) | Name of the Talos template VM | `string` | `"talos"` | no |
 | <a name="input_template_network"></a> [template\_network](#input\_template\_network) | n/a | `map(any)` | <pre>{<br/>  "vmbr0": {}<br/>}</pre> | no |
