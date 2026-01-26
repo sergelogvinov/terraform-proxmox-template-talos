@@ -121,6 +121,8 @@ resource "proxmox_virtual_environment_vm" "template" {
 
     datastore_id      = var.template_datastore
     user_data_file_id = length(proxmox_virtual_environment_file.userdata) > 0 ? proxmox_virtual_environment_file.userdata[0].id : null
+
+    interface = "ide2"
   }
 
   tablet_device = false
