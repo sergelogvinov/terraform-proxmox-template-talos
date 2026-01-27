@@ -56,13 +56,13 @@ Common variables to override:
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0 |
-| <a name="requirement_proxmox"></a> [proxmox](#requirement\_proxmox) | 0.93.0 |
+| <a name="requirement_proxmox"></a> [proxmox](#requirement\_proxmox) | >= 0.72.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_proxmox"></a> [proxmox](#provider\_proxmox) | 0.93.0 |
+| <a name="provider_proxmox"></a> [proxmox](#provider\_proxmox) | >= 0.72.0 |
 
 ## Modules
 
@@ -72,9 +72,9 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [proxmox_virtual_environment_download_file.talos](https://registry.terraform.io/providers/bpg/proxmox/0.93.0/docs/resources/virtual_environment_download_file) | resource |
-| [proxmox_virtual_environment_file.userdata](https://registry.terraform.io/providers/bpg/proxmox/0.93.0/docs/resources/virtual_environment_file) | resource |
-| [proxmox_virtual_environment_vm.template](https://registry.terraform.io/providers/bpg/proxmox/0.93.0/docs/resources/virtual_environment_vm) | resource |
+| [proxmox_virtual_environment_download_file.talos](https://registry.terraform.io/providers/bpg/proxmox/latest/docs/resources/virtual_environment_download_file) | resource |
+| [proxmox_virtual_environment_file.userdata](https://registry.terraform.io/providers/bpg/proxmox/latest/docs/resources/virtual_environment_file) | resource |
+| [proxmox_virtual_environment_vm.template](https://registry.terraform.io/providers/bpg/proxmox/latest/docs/resources/virtual_environment_vm) | resource |
 
 ## Inputs
 
@@ -87,6 +87,7 @@ No modules.
 | <a name="input_talos_image_name"></a> [talos\_image\_name](#input\_talos\_image\_name) | Name of the Talos image to download | `string` | `"talos.raw.xz.img"` | no |
 | <a name="input_talos_secureboot"></a> [talos\_secureboot](#input\_talos\_secureboot) | Whether to use the secureboot Talos image | `bool` | `false` | no |
 | <a name="input_talos_version"></a> [talos\_version](#input\_talos\_version) | Version of Talos of template to download | `string` | `"v1.12.1"` | no |
+| <a name="input_template_amdsev"></a> [template\_amdsev](#input\_template\_amdsev) | Whether to enable AMD SEV for the Talos template VM | `string` | `""` | no |
 | <a name="input_template_cpu_flags"></a> [template\_cpu\_flags](#input\_template\_cpu\_flags) | CPU flags for the Talos template VM | `list(string)` | `[]` | no |
 | <a name="input_template_datastore"></a> [template\_datastore](#input\_template\_datastore) | Datastore to store the Talos template | `string` | `"local"` | no |
 | <a name="input_template_hugepages"></a> [template\_hugepages](#input\_template\_hugepages) | Whether to enable hugepages for the Talos template VM | `string` | `""` | no |

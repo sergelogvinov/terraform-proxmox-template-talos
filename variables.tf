@@ -28,6 +28,17 @@ variable "template_tpm" {
   default     = false
 }
 
+variable "template_amdsev" {
+  description = "Whether to enable AMD SEV for the Talos template VM"
+  type        = string
+  default     = ""
+
+  validation {
+    condition     = contains(["", "std", "snp"], var.template_amdsev)
+    error_message = "The AMD SEV type must be one of 'std' or 'snp'."
+  }
+}
+
 variable "template_hugepages" {
   description = "Whether to enable hugepages for the Talos template VM"
   type        = string

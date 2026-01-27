@@ -38,6 +38,15 @@ resource "proxmox_virtual_environment_vm" "template" {
     type         = "4m"
   }
 
+  dynamic "amd_sev" {
+    for_each = var.template_amdsev != "" ? [1] : []
+    content {
+      type          = var.template_amdsev
+      kernel_hashes = true
+      no_debug      = true
+    }
+  }
+
   dynamic "tpm_state" {
     for_each = var.template_tpm ? [1] : []
     content {
@@ -71,6 +80,7 @@ resource "proxmox_virtual_environment_vm" "template" {
     }
   }
 
+  boot_order    = ["scsi0"]
   scsi_hardware = "virtio-scsi-single"
   disk {
     file_id      = proxmox_virtual_environment_download_file.talos.id
