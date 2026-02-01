@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.4.0](https://github.com/sergelogvinov/terraform-proxmox-template-talos/compare/v0.3.0...v0.4.0) (2026-02-01)
+
+
+### Features
+
+* amd sev ([c3ad05d](https://github.com/sergelogvinov/terraform-proxmox-template-talos/commit/c3ad05d76c21ce05df3e15fb2c0031eb665683d2))
+
+
+### Bug Fixes
+
+* amd sev requires 0.78.0 version ([f73951f](https://github.com/sergelogvinov/terraform-proxmox-template-talos/commit/f73951ff7d5811608b2fda4e16b1ecbafe7bfb3e))
+* provider version ([6580d35](https://github.com/sergelogvinov/terraform-proxmox-template-talos/commit/6580d3589ead3a5ab58403dcffad5a3c984da5cc))
+
 ## [0.3.0](https://github.com/sergelogvinov/terraform-proxmox-template-talos/compare/v0.2.0...v0.3.0) (2026-01-23)
 
 
