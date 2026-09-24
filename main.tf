@@ -98,6 +98,7 @@ resource "proxmox_virtual_environment_vm" "template" {
     content {
       bridge   = network_device.key
       firewall = lookup(network_device.value, "firewall", false)
+      mtu      = lookup(network_device.value, "mtu", 0)
     }
   }
 

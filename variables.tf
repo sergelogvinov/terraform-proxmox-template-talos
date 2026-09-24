@@ -77,6 +77,7 @@ variable "template_network" {
   type = map(any)
   default = {
     "vmbr0" = {
+      # mtu      = 1500
       # firewall = false
       # ip6      = "auto"
       # gw6      = "fe80::1"
