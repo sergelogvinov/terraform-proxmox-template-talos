@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.5.0](https://github.com/sergelogvinov/terraform-proxmox-template-talos/compare/v0.4.0...v0.5.0) (2026-09-24)
+
+
+### Features
+
+* mtu for network iface ([390394c](https://github.com/sergelogvinov/terraform-proxmox-template-talos/commit/390394c807f91aeadbeecc5f4a46202abefb529d))
+
 ## [0.4.0](https://github.com/sergelogvinov/terraform-proxmox-template-talos/compare/v0.3.0...v0.4.0) (2026-02-01)
 
 
